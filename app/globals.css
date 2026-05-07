@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@import "tw-animate-css";
+
+@theme {
+  --color-brand-primary: var(--color-brand-primary-val);
+  --color-brand-secondary: var(--color-brand-secondary-val);
+  --color-brand-accent: var(--color-brand-accent-val);
+  --color-brand-border: var(--color-brand-border-val);
+  --color-brand-card: var(--color-brand-card-val);
+  --color-brand-text: var(--color-brand-text-val);
+  --color-brand-text-muted: var(--color-brand-text-muted-val);
+  --color-brand-glow: var(--color-brand-glow-val);
+  --color-brand-bg: var(--color-brand-bg-val);
+
+  --font-sans: "SF Pro Display", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@layer base {
+  :root {
+    --color-brand-primary-val: #111111;
+    --color-brand-secondary-val: #ffffff;
+    --color-brand-accent-val: #007AFF;
+    --color-brand-border-val: rgba(0, 0, 0, 0.08);
+    --color-brand-card-val: rgba(255, 255, 255, 0.75);
+    --color-brand-text-val: #111111;
+    --color-brand-text-muted-val: #666666;
+    --color-brand-glow-val: rgba(0, 122, 255, 0.15);
+    --color-brand-bg-val: #F5F5F7;
+  }
+
+  .dark {
+    --color-brand-primary-val: #ffffff;
+    --color-brand-secondary-val: #1c1c1e;
+    --color-brand-accent-val: #0a84ff;
+    --color-brand-border-val: rgba(255, 255, 255, 0.12);
+    --color-brand-card-val: rgba(28, 28, 30, 0.75);
+    --color-brand-text-val: #f5f5f7;
+    --color-brand-text-muted-val: #98989d;
+    --color-brand-glow-val: rgba(10, 132, 255, 0.25);
+    --color-brand-bg-val: #000000;
+  }
+
+  body {
+    background-color: var(--color-brand-bg-val);
+    color: var(--color-brand-text-val);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.glass-panel {
+  background: var(--color-brand-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-brand-border);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--color-brand-border);
+}
+
+.shadow-apple {
+  box-shadow: 0 4px 24px -6px rgba(0, 0, 0, 0.05), 0 12px 32px -8px rgba(0, 0, 0, 0.03);
+}
+
+.hover-glow {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.hover-glow:hover {
+  box-shadow: 0 0 0 4px var(--color-brand-glow);
+  border-color: var(--color-brand-accent);
+}

@@ -1,0 +1,6 @@
+{
+  "name": "PrivateGPT",
+  "description": "Apple-style Private document analyzer",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
